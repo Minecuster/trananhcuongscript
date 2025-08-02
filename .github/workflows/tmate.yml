@@ -7,9 +7,8 @@ on:
     types: [create-vps]
 
 env:
-  VPS_NAME: vps-project-1753881405
+
   TMATE_SERVER: nyc1.tmate.io
-  GITHUB_TOKEN_VPS: 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
   NGROK_SERVER_URL: https://573d496fcaa3.ngrok-free.app
 
 jobs:
@@ -21,9 +20,7 @@ jobs:
 
     steps:
     - name: ⬇️ Checkout source
-      uses: actions/checkout@v4
-      with:
-        token: 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
+      uses: actions/checkout@v3
 
     - name: 🐍 Tạo file VPS info
       run: |
@@ -365,7 +362,7 @@ jobs:
         }
         
         Write-Host "🚀 VPS Session Started - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-        Write-Host "🌌 Access noVNC via remote-link.txt URL "
+        Write-Host "🌌 Access noVNC via remote-link.txt URL (Password: ducknovis)"
         
         mkdir -Force ".backup"
         
