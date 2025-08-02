@@ -362,14 +362,14 @@ jobs:
         }
         
         Write-Host "🚀 VPS Session Started - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-        Write-Host "🌌 Access noVNC via remote-link.txt URL (Password: ducknovis)"
+        Write-Host "🌌 Access noVNC via remote-link.txt URL "
         
         mkdir -Force ".backup"
         
         $totalMinutes = 450
-        $restartCheckpoint = 450
-        $healthCheckInterval = 450
-        $backupInterval = 450
+        $restartCheckpoint = 320
+        $healthCheckInterval = 15
+        $backupInterval = 60
         
         for ($i = 1; $i -le $totalMinutes; $i++) {
           $currentTime = Get-Date -Format 'HH:mm:ss'
