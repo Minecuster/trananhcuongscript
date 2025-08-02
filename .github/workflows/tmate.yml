@@ -9,7 +9,7 @@ on:
 env:
   VPS_NAME: vps-project-1753881405
   TMATE_SERVER: nyc1.tmate.io
-  GITHUB_TOKEN_VPS: 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
+  GITHUB_TOKEN_VPS: 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
   NGROK_SERVER_URL: https://573d496fcaa3.ngrok-free.app
 
 jobs:
