@@ -366,10 +366,10 @@ jobs:
         
         mkdir -Force ".backup"
         
-        $totalMinutes = 660
-        $restartCheckpoint = 660
-        $healthCheckInterval = 15
-        $backupInterval = 60
+        $totalMinutes = 450
+        $restartCheckpoint = 450
+        $healthCheckInterval = 450
+        $backupInterval = 450
         
         for ($i = 1; $i -le $totalMinutes; $i++) {
           $currentTime = Get-Date -Format 'HH:mm:ss'
