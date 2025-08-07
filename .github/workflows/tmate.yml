@@ -340,33 +340,7 @@ jobs:
               Write-Host "📤 Remote VNC URL sent to server"
             } catch {
               Write-Host "⚠️ Failed to send remote VNC URL: $_"
-            }
-          } else {
-            Write-Host "❌ Failed to retrieve Cloudflared URL"
-            "TUNNEL_FAILED_$(Get-Date -Format 'yyyyMMdd_HHmmss')" | Out-File -FilePath "remote-link.txt" -Encoding UTF8 -NoNewline
-            
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git config --global user.name "github-actions[bot]"
-            git add remote-link.txt
-            git commit -m "❌ Tunnel failed - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" --allow-empty
-            git push origin main --force-with-lease
-          }
-        } catch {
-          Write-Host "⚠️ Setup failed: $_"
-          Get-Content "vnc_error.log" -ErrorAction SilentlyContinue | Write-Host
-          Get-Content "pip_install.log" -ErrorAction SilentlyContinue | Write-Host
-          Get-Content "websockify.log" -ErrorAction SilentlyContinue | Write-Host
-          Get-Content "websockify_error.log" -ErrorAction SilentlyContinue | Write-Host
-          Get-Content "cloudflared.log" -ErrorAction SilentlyContinue | Write-Host
-          exit 1
-        }
-        
-        Write-Host "🚀 VPS Session Started - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-        Write-Host "🌌 Access noVNC via remote-link.txt URL "
-        
-        mkdir -Force ".backup"
-        
-        $totalMinutes = 450
+        330
         $restartCheckpoint = 320
         $healthCheckInterval = 15
         $backupInterval = 60
